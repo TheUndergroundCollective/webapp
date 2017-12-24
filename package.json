@@ -1,0 +1,25 @@
+{
+  "name": "ugc",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "NODE_ENV=production webpack -p",
+    "dev": "NODE_ENV=development webpack -w"
+  },
+  "devDependencies": {
+    "graphql-js-schema": "^0.5.0",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-react-app": "^3.0.0",
+    "webpack": "^3.0.0"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "shopify-buy": "^1.0.2"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  }
+}
