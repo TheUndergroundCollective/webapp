@@ -1,3 +1,3 @@
 node_modules
-components/*.bundle.js
+app/*.bundle.js
 .env

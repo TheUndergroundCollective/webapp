@@ -15,10 +15,6 @@ class App extends Component {
 
   componentWillMount() {
     this.fetchProducts();
-    //delete a product:
-    //products to delete
-    fetch('/delete_product?id=667287912490', {headers: {'Content-Type': 'application/json'},
-      method: 'DELETE'})
   }
 
   fetchProducts() {

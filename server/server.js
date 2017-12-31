@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
-const webpack = require('webpack');
-const config = require('../webpack.config.js');
+//const webpack = require('webpack');
+//const config = require('../webpack.config.js');
 const bodyParser = require('body-parser');
 const request = require('request');
 //loads in the environment variables from .env file
@@ -42,10 +42,10 @@ app.delete('/delete_product', function(req, res) {
 })
 
 
-app.listen(port, '0.0.0.0', (err) => {
+app.listen(port, (err) => {
   if (err) {
     console.log(err);
   }
-  console.info('Server running on http://0.0.0.0:%s/.', port);
+  console.info('Server running on http://localhost:%s/.', port);
   console.log(path.join(__dirname, '../app'));
 });
