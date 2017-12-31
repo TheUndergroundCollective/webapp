@@ -3,11 +3,11 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    index: './components/entry_point.js'
+    index: './app/entry_point.js'
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, './components/')
+    path: path.resolve(__dirname, './app/')
   },
   module: {
     rules: [
