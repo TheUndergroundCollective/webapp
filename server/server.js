@@ -1,7 +1,5 @@
 const path = require('path');
 const express = require('express');
-//const webpack = require('webpack');
-//const config = require('../webpack.config.js');
 const bodyParser = require('body-parser');
 const request = require('request');
 //loads in the environment variables from .env file
