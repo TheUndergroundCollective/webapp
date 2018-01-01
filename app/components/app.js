@@ -9,6 +9,7 @@ InputGroup, InputGroupAddon, Input,
 Card, CardImg, CardBody, CardColumns,
   CardTitle} from 'reactstrap';
 import Person from 'react-open-iconic-svg/dist/Person';
+import MagnifyingGlass from 'react-open-iconic-svg/dist/MagnifyingGlass';
 
 class App extends Component {
   constructor(props) {
@@ -56,16 +57,16 @@ class App extends Component {
         <Navbar light expand="md" className = 'shoe-navbar'>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="#">Shop</NavLink>
+              <NavLink className = 'shoe-navlink' href="#" style = {{borderBottom: '2px solid orange'}}>SHOP</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Top Sellers</NavLink>
+              <NavLink className = 'shoe-navlink' href="#">TOP SELLERS</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Upcoming</NavLink>
+              <NavLink className = 'shoe-navlink' href="#">UPCOMING</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Size Guide</NavLink>
+              <NavLink className = 'shoe-navlink' href="#">SIZE GUIDE</NavLink>
             </NavItem>
             <div className = 'shoe-navbar-line'></div>
             <NavItem>
@@ -77,13 +78,15 @@ class App extends Component {
         </Navbar>
         <div className = 'container-fluid search-div'>
           <div style = {{width: '60%', marginLeft: '20%', marginTop: '40px', lineHeight: '40px',
-              verticalAlign: 'middle', border: 'solid 0.5px #b9b9b9'}}>
+              verticalAlign: 'middle', boxShadow: '0 2px 1.0px 0 rgba(0, 0, 0, 0.1)'}}>
           <InputGroup>
-            <Input type = "search" placeholder="search" style = {{boxShadow: '0 1px 0.5px 0 rgba(0, 0, 0, 0.1)'}}/>
+            <MagnifyingGlass style = {{position: 'absolute', zIndex: 2000, height: 30, width: 30, marginLeft: 10, marginTop: 5}}/>
+            <Input type = "search" style = {{border: 'solid 0.5px #b9b9b9'}}>
+            </Input>
             <InputGroupAddon style = {{border: 'solid 0.5px #b9b9b9',
             borderTopRightRadius: '5px', borderBottomRightRadius: '5px',
-            boxShadow: '0 1px 0.5px 0 rgba(0, 0, 0, 0.1)'}}>
-            {'  Add Filters  '}
+            cursor: 'pointer'}}>
+            <span style = {{paddingLeft: '10px', paddingRight: '10px'}}>Add Filters</span>
             </InputGroupAddon>
           </InputGroup>
           </div>
@@ -92,10 +95,15 @@ class App extends Component {
           <CardColumns>
             {this.state.products.map((product)=>{
               return (<div className = 'col-xs-4' key = {Math.random()}>
-              <Card style = {{height: 300, marginBottom: 30}}>
+              <Card style = {{height: 300, marginBottom: 30, border: 'none', borderRadius: '0px'}}>
                 <CardImg top width = '100%' style = {{height: 200}} src={product.images[0] && product.images[0].src? product.images[0].src: 'https://images.nike.com/is/image/DotCom/PDP_HERO/849558_100_A_PREM/air-vapormax-flyknit-mens-running-shoe-BjAw8V.jpg'} alt="Card image cap" />
                 <CardBody className = 'shoe-card-bottom'>
-                  <CardTitle style = {{fontSize: '18px'}}>{product.title}</CardTitle>
+                  <CardTitle style = {{fontSize: '18px'}}>{product.title}
+                  <br/>
+                  <span style = {{color: 'orange'}}>
+                  $260
+                  </span>
+                  </CardTitle>
                 </CardBody>
               </Card>
               </div>);
