@@ -1,4 +1,14 @@
 import React, { Component } from 'react';
+import {
+  Collapse,
+  Navbar,
+  Nav,
+  NavItem,
+  NavLink,
+InputGroup, InputGroupAddon, Input,
+Card, CardImg, CardBody, CardColumns,
+  CardTitle} from 'reactstrap';
+import Person from 'react-open-iconic-svg/dist/Person';
 
 class App extends Component {
   constructor(props) {
@@ -41,13 +51,57 @@ class App extends Component {
   }
 
   render() {
-    return(<div>
-      {this.state.products.map((product)=>{
-        return <div key = {Math.random()}>
-        {product.images[0]?<img style = {{width: '50px', height: '50px', position: 'absolute'}} src = {product.images[0].src}/>:null}
-        <h1 style = {{paddingTop: '10px',  paddingLeft: '60px'}}>{product.title}</h1>
-        </div>;
-      })}
+    return(
+      <div>
+        <Navbar light expand="md" className = 'shoe-navbar'>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink href="#">Shop</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#">Top Sellers</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#">Upcoming</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#">Size Guide</NavLink>
+            </NavItem>
+            <div className = 'shoe-navbar-line'></div>
+            <NavItem>
+              <NavLink href="#">
+                <Person style = {{width: 25, height: 25}}/>
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Navbar>
+        <div className = 'container-fluid search-div'>
+          <div style = {{width: '60%', marginLeft: '20%', marginTop: '40px', lineHeight: '40px',
+              verticalAlign: 'middle', border: 'solid 0.5px #b9b9b9'}}>
+          <InputGroup>
+            <Input type = "search" placeholder="search" style = {{boxShadow: '0 1px 0.5px 0 rgba(0, 0, 0, 0.1)'}}/>
+            <InputGroupAddon style = {{border: 'solid 0.5px #b9b9b9',
+            borderTopRightRadius: '5px', borderBottomRightRadius: '5px',
+            boxShadow: '0 1px 0.5px 0 rgba(0, 0, 0, 0.1)'}}>
+            {'  Add Filters  '}
+            </InputGroupAddon>
+          </InputGroup>
+          </div>
+        </div>
+        <div style = {{marginTop: 50, marginLeft: '10%', width: '80%'}}>
+          <CardColumns>
+            {this.state.products.map((product)=>{
+              return (<div className = 'col-xs-4' key = {Math.random()}>
+              <Card style = {{height: 300, marginBottom: 30}}>
+                <CardImg top width = '100%' style = {{height: 200}} src={product.images[0] && product.images[0].src? product.images[0].src: 'https://images.nike.com/is/image/DotCom/PDP_HERO/849558_100_A_PREM/air-vapormax-flyknit-mens-running-shoe-BjAw8V.jpg'} alt="Card image cap" />
+                <CardBody className = 'shoe-card-bottom'>
+                  <CardTitle style = {{fontSize: '18px'}}>{product.title}</CardTitle>
+                </CardBody>
+              </Card>
+              </div>);
+            })}
+          </CardColumns>
+        </div>
     </div>);
   }
 }
