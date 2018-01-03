@@ -58,10 +58,19 @@ body {
 .shoe-left-nav-item-div {
 	margin-top: 10px;
 	margin-bottom: 10px;
+  font-family: 'DIN';
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.44;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2e2e2e;
 }
 
 .shoe-left-nav-item:hover {
-	font-family: 'Apercu-Bold', sans-serif;
+	border-bottom: solid 3px #eec124;
 	cursor: pointer;
 }
 

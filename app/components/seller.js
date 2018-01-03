@@ -10,15 +10,63 @@ Card, CardImg, CardBody, CardColumns,
   CardTitle} from 'reactstrap';
 import Person from './person';
 import MagnifyingGlass from './magnifyingGlass';
+import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
 
 class Seller extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      showMagnifyingGlass: true
+    };
   }
 
+  componentWillMount() {
+    window.addEventListener('click', function(e){
+      if (e.target.id === 'searchInput') {
+        this.setState({showMagnifyingGlass: false});
+      } else if (!this.state.showMagnifyingGlass){
+        this.setState({showMagnifyingGlass: true});
+      }
+    }.bind(this))
+  }
+  
   render() {
     return(
       <div>
+        <Navbar light expand="md" className = 'shoe-navbar'>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink className = 'shoe-navlink' href="#" style = {{fontFamily: "'Apercu-Bold', sans-serif"}}>Shop</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink className = 'shoe-navlink' href="#">Top Sellers</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink className = 'shoe-navlink' href="#">Upcoming</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink className = 'shoe-navlink' href="#">Size Guide</NavLink>
+            </NavItem>
+            <div className = 'shoe-navbar-line'></div>
+            <NavItem>
+              <NavLink href="#">
+                <UncontrolledDropdown>
+                  <DropdownToggle nav = {true} style = {{backgroundColor: '#ffffff', border: 'none'}}>
+                    <Person classProp = 'shoe-person'/>
+                  </DropdownToggle>
+                  <DropdownMenu style = {{marginRight: 50}}>
+                    <DropdownItem onClick = {()=>{window.location.href = 'seller.html'}}>Seller Dashboard</DropdownItem>
+                    <DropdownItem>Interest List</DropdownItem>
+                    <DropdownItem>Edit Profile</DropdownItem>
+                    <DropdownItem>Sign Out</DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Navbar>
         <div className = 'row'>
           <div className = 'col-12 col-md-3 col-xl-2' style = {{backgroundColor: '#ffffff'}}>
             <nav>
@@ -35,7 +83,9 @@ class Seller extends Component {
               <div style = {{position: 'relative', width: '60%', marginLeft: '20%', marginRight: '20%', marginTop: '40px', lineHeight: '40px',
               verticalAlign: 'middle', boxShadow: '0 2px 1.0px 0 rgba(0, 0, 0, 0.1)'}}>
                 <InputGroup>
-                  <MagnifyingGlass classProp = 'shoe-magnifying-glass'/>
+                  {this.state.showMagnifyingGlass?
+                    <MagnifyingGlass classProp = 'shoe-magnifying-glass'/>
+                    :null}
                   <Input type = "search" style = {{border: 'solid 0.5px #b9b9b9', borderTopLeftRadius: '3px', borderBottomLeftRadius: '3px'}}>
                   </Input>
                   <InputGroupAddon style = {{border: 'solid 0.5px #b9b9b9',
@@ -54,7 +104,7 @@ class Seller extends Component {
                       <img src = 'https://www.vccircle.com/wp-content/uploads/2017/03/default-profile.png' style = {{width: 50, height: 50, borderRadius: 100, marginBottom: 20, marginTop: 50, border: '0.1px solid black'}}/>
                       <CardTitle style = {{fontSize: '18px'}}>Tyler Henke
                         <br/>
-                        <span style = {{color: 'orange'}}>
+                        <span style = {{color: '#eec124'}}>
                           Indiana
                         </span>
                       </CardTitle>
@@ -67,7 +117,7 @@ class Seller extends Component {
                       <img src = 'https://www.vccircle.com/wp-content/uploads/2017/03/default-profile.png' style = {{width: 50, height: 50, borderRadius: 100, marginBottom: 20, marginTop: 50, border: '0.1px solid black'}}/>
                       <CardTitle style = {{fontSize: '18px'}}>Tyler Mason
                         <br/>
-                        <span style = {{color: 'orange'}}>
+                        <span style = {{color: '#eec124'}}>
                           Indiana
                         </span>
                       </CardTitle>
