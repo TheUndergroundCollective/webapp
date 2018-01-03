@@ -1,33 +1,56 @@
+@font-face {
+ font-family: "Apercu-Regular";
+ src: url("./fonts/Apercu-Regular.woff") format("woff");
+}
+
+@font-face {
+ font-family: "Apercu-Mono";
+ src: url("./fonts/Apercu-Mono-Regular.woff") format("woff");
+}
+
+@font-face {
+ font-family: "Apercu-Bold";
+ src: url("./fonts/Apercu-Bold.woff") format("woff");
+}
+
+@font-face {
+ font-family: "DIN";
+ src: url("./fonts/FF-DIN-Bold.woff") format("woff");
+}
+
 body {
 	background-color: #fcfcfc;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Apercu-Regular', sans-serif;
+  font-size: 16px;
 	margin: 0px;
 	padding: 0px;
 }
 
 #bootstrap-overrides .shoe-navbar {
 	background-color: #ffffff;
-  	box-shadow: 0 1.5px 0.5px 0 rgba(0, 0, 0, 0.1), 0 0.5px 0 0 #b9b9b9;
-  	border: solid 0 #000000;
+  box-shadow: 0 1.5px 0.5px 0 rgba(0, 0, 0, 0.1), 0 0.5px 0 0 #b9b9b9;
+  border: solid 0 #000000;
 }
 
 #bootstrap-overrides .shoe-navlink {
-	font-weight: bold;
-  	color: black;
-  	padding-bottom: 0px;
-  	margin-left: 5px;
-  	margin-right: 5px;
+	font-family: 'Apercu-Regular', sans-serif;
+  font-size: 17px;
+  color: black;
+  padding-bottom: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
 }
 
 #bootstrap-overrides .shoe-navlink:hover {
-	border-bottom: 2px solid orange;
+	font-family: 'Apercu-Bold', sans-serif;
 }
 
 .shoe-navbar-line {
   width: 1px;
   height: 30px;
   border: solid 0.5px #e5e5e5;
-  margin-top: 5px;
+  margin-top: 15px;
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -38,7 +61,7 @@ body {
 }
 
 .shoe-left-nav-item:hover {
-	border-bottom: 2px solid orange;
+	font-family: 'Apercu-Bold', sans-serif;
 	cursor: pointer;
 }
 
@@ -46,6 +69,18 @@ body {
   height: 120px;
   border: solid 0.5px #d0d0d0;
   text-align: center;
+}
+
+.shoe-price {
+  font-family: 'Apercu-Mono', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: rgba(46, 46, 46, 0.8);
+  position: absolute;
+  margin-left: calc(100% - 60px);
+  margin-top: 5px;
 }
 
 #bootstrap-overrides .shoe-card-bottom {
@@ -71,5 +106,19 @@ body {
   margin-bottom: 30;
   margin-right: 20;
   padding: 0;
+}
+
+.shoe-magnifying-glass {
+  position: absolute;
+  z-index: 2000;
+  height: 25;
+  width: 25;
+  margin-left: 10;
+  margin-top: 7.5;
+}
+
+.shoe-person {
+  width: 29;
+  height: 28;
 }
 

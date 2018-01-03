@@ -8,8 +8,8 @@ import {
 InputGroup, InputGroupAddon, Input,
 Card, CardImg, CardBody, CardColumns,
   CardTitle} from 'reactstrap';
-import Person from 'react-open-iconic-svg/dist/Person';
-import MagnifyingGlass from 'react-open-iconic-svg/dist/MagnifyingGlass';
+import Person from './person';
+import MagnifyingGlass from './magnifyingGlass';
 
 class Seller extends Component {
   constructor(props) {
@@ -35,11 +35,11 @@ class Seller extends Component {
               <div style = {{position: 'relative', width: '60%', marginLeft: '20%', marginRight: '20%', marginTop: '40px', lineHeight: '40px',
               verticalAlign: 'middle', boxShadow: '0 2px 1.0px 0 rgba(0, 0, 0, 0.1)'}}>
                 <InputGroup>
-                  <MagnifyingGlass style = {{position: 'absolute', zIndex: 2000, height: 30, width: 30, marginLeft: 10, marginTop: 5}}/>
-                  <Input type = "search" style = {{border: 'solid 0.5px #b9b9b9'}}>
+                  <MagnifyingGlass classProp = 'shoe-magnifying-glass'/>
+                  <Input type = "search" style = {{border: 'solid 0.5px #b9b9b9', borderTopLeftRadius: '3px', borderBottomLeftRadius: '3px'}}>
                   </Input>
                   <InputGroupAddon style = {{border: 'solid 0.5px #b9b9b9',
-                    borderTopRightRadius: '5px', borderBottomRightRadius: '5px',
+                    borderTopRightRadius: '3px', borderBottomRightRadius: '3px',
                     cursor: 'pointer'}}>
                     <span style = {{paddingLeft: '10px', paddingRight: '10px'}}>Edit Filters</span>
                   </InputGroupAddon>
