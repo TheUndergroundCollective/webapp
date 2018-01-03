@@ -31,7 +31,7 @@ class Seller extends Component {
       }
     }.bind(this))
   }
-  
+
   render() {
     return(
       <div>
@@ -86,7 +86,7 @@ class Seller extends Component {
                   {this.state.showMagnifyingGlass?
                     <MagnifyingGlass classProp = 'shoe-magnifying-glass'/>
                     :null}
-                  <Input type = "search" style = {{border: 'solid 0.5px #b9b9b9', borderTopLeftRadius: '3px', borderBottomLeftRadius: '3px'}}>
+                  <Input id = 'searchInput' type = "search" style = {{border: 'solid 0.5px #b9b9b9', borderTopLeftRadius: '3px', borderBottomLeftRadius: '3px'}}>
                   </Input>
                   <InputGroupAddon style = {{border: 'solid 0.5px #b9b9b9',
                     borderTopRightRadius: '3px', borderBottomRightRadius: '3px',
