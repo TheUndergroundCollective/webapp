@@ -35,7 +35,7 @@ class Seller extends Component {
   render() {
     return(
       <div>
-        <Navbar light expand="md" className = 'shoe-navbar'>
+        <Navbar light expand="md" className = 'shoe-navbar' style = {{borderBottom: 'solid 1px #d0d0d0'}}>
           <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink className = 'shoe-navlink' href="#" style = {{fontFamily: "'Apercu-Bold', sans-serif"}}>Shop</NavLink>
@@ -68,7 +68,7 @@ class Seller extends Component {
           </Nav>
         </Navbar>
         <div className = 'row'>
-          <div className = 'col-12 col-md-3 col-xl-2' style = {{backgroundColor: '#ffffff'}}>
+          <div className = 'col-2' style = {{backgroundColor: '#ffffff'}}>
             <nav>
               <div style = {{marginLeft: 40, marginTop: 100, fontSize: 18}}>
                 <div className = 'shoe-left-nav-item-div'><a className = 'shoe-left-nav-item'>FIND BUYERS</a></div>
@@ -78,9 +78,9 @@ class Seller extends Component {
               </div>
             </nav>
           </div>
-          <div className = 'col-12 col-md-9 col-xl-8' style = {{padding: 0, marginTop: 0, backgroundColor: '#fcfcfc', border: 'none', borderLeft: 'solid 0.5px #d0d0d0'}}>
-            <div className = 'search-div' style = {{position: 'relative', width: '100%', border: 'none', borderBottom: 'solid 0.5px #d0d0d0'}}>
-              <div style = {{position: 'relative', width: '60%', marginLeft: '20%', marginRight: '20%', marginTop: '40px', lineHeight: '40px',
+          <div className = 'col-10' style = {{padding: 0, marginTop: 0, backgroundColor: '#fcfcfc', border: 'none', borderLeft: 'solid 0.5px #d0d0d0'}}>
+            <div className = 'search-div' style = {{border: 'none', borderBottom: 'solid 0.5px #d0d0d0'}}>
+              <div style = {{position: 'absolute', width: '60%', marginLeft: '20%', marginRight: '20%', marginTop: '40px', lineHeight: '40px',
               verticalAlign: 'middle', boxShadow: '0 2px 1.0px 0 rgba(0, 0, 0, 0.1)'}}>
                 <InputGroup>
                   {this.state.showMagnifyingGlass?
@@ -96,7 +96,7 @@ class Seller extends Component {
                 </InputGroup>
               </div>
             </div>
-            <div className = 'container-fluid' style = {{marginTop: 50, height: 'calc(100% - 120px)'}}>
+            <div className = 'container' style = {{marginTop: 50, height: 'calc(100% - 120px)'}}>
               <CardColumns style = {{marginLeft: 50}}>
                 <div className = 'col-xs-4'>
                   <Card className = 'shoe-user-card'>
@@ -124,6 +124,7 @@ class Seller extends Component {
                     </div>
                   </Card>
                 </div>
+                <div className = 'col-xs-4'></div>
               </CardColumns>
             </div>
           </div>
